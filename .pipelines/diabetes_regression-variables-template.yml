@@ -92,7 +92,7 @@ variables:
   - name: AML_CLUSTER_MAX_NODES_SCORING
     value: 4
   - name: AML_CLUSTER_PRIORITY_SCORING
-    value: lowpriority
+    value: dedicated
   # The path to the batch scoring script relative to SOURCES_DIR_TRAIN
   - name: BATCHSCORE_SCRIPT_PATH
     value: scoring/parallel_batchscore.py
