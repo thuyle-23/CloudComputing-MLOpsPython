@@ -43,14 +43,14 @@ stages:
         projectId: '$(resources.pipeline.model-train-ci.projectID)'
         pipelineId: '$(resources.pipeline.model-train-ci.pipelineID)'
         artifactBuildId: ${{ parameters.artifactBuildId }}
-    - task: AzureCLI@1
+    - task: AzureCLI@2
       displayName: 'Install AzureML CLI'
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
         scriptLocation: inlineScript
         workingDirectory: $(Build.SourcesDirectory)
         inlineScript: 'az extension add --source https://azurecliext.blob.core.windows.net/release/azure_cli_ml-1.27.0-py3-none-any.whl --yes'
-    - task: AzureCLI@1
+    - task: AzureCLI@2
       displayName: "Deploy to ACI (CLI)"
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
@@ -89,7 +89,7 @@ stages:
         projectId: '$(resources.pipeline.model-train-ci.projectID)'
         pipelineId: '$(resources.pipeline.model-train-ci.pipelineID)'
         artifactBuildId: ${{ parameters.artifactBuildId }}
-    - task: AzureCLI@1
+    - task: AzureCLI@2
       displayName: 'Install AzureML CLI'
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
