@@ -64,7 +64,7 @@ stages:
           --dc deployment_config_aci.yml \
           -g $(RESOURCE_GROUP) --workspace-name $(WORKSPACE_NAME) \
           --overwrite -v
-    - task: AzureCLI@1
+    - task: AzureCLI@2
       displayName: 'Smoke test'
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
@@ -142,7 +142,7 @@ stages:
         condaFilePath: '$(Build.SourcesDirectory)/$(SOURCES_DIR_TRAIN)/conda_dependencies.yml'
     - script: echo $(IMAGE_LOCATION) >image_location.txt
       displayName: "Write image location file"
-    - task: AzureWebAppContainer@1
+    - task: AzureWebAppContainer@2
       name: WebAppDeploy
       displayName: 'Azure Web App on Container Deploy'
       inputs:
