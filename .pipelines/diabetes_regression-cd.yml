@@ -49,7 +49,7 @@ stages:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
         scriptLocation: inlineScript
         workingDirectory: $(Build.SourcesDirectory)
-        inlineScript: 'az extension add --source https://azurecliext.blob.core.windows.net/release/azure_cli_ml-2.49.0-py3-none-any.whl --yes'
+        inlineScript: 'az extension add --source https://azurecliext.blob.core.windows.net/release/azure_cli_ml-2.30.0-py3-none-any.whl --yes'
     - task: AzureCLI@2
       displayName: "Deploy to ACI (CLI)"
       inputs:
