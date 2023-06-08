@@ -35,4 +35,3 @@ steps:
     modelId: $(MODEL_NAME):$(MODEL_VERSION)
     scoringScriptPath: '$(Build.SourcesDirectory)/$(SOURCES_DIR_TRAIN)/$(SCORE_SCRIPT)'
     condaFilePath: '$(Build.SourcesDirectory)/$(SOURCES_DIR_TRAIN)/conda_dependencies.yml'
-
